@@ -1,0 +1,35 @@
+{
+  "name": "keyboard-sfx",
+  "version": "5.0.0",
+  "description": "Realtime Interactive Audio Engine — key-state-driven, low-latency desktop app",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "author": "Joestar",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.node.json && vite build",
+    "preview": "vite preview",
+    "start": "electron .",
+    "build:native": "node-gyp rebuild",
+    "build:native:electron": "node-gyp rebuild --target=33.4.11 --dist-url=https://electronjs.org/headers",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.node.json"
+  },
+  "dependencies": {
+    "node-addon-api": "^8.8.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.5"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.4",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vite-plugin-electron": "^0.28.8",
+    "vite-plugin-electron-renderer": "^0.14.6"
+  }
+}
